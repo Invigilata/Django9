@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Игры</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a.button {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Игры</h1>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/shop/">Магазин</a>
+        <a href="/cart/">Корзина</a>
+    </nav>
+    <ul>
+        {% for game in games %}
+            <li>
+                {{ game.title }} | {{ game.description }}. Стоимость: {{ game.price }}
+                <a class="button" href="#">Купить</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
